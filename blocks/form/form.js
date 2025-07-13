@@ -430,6 +430,11 @@ export async function fetchForm(pathname) {
 
   if (resp?.headers?.get('Content-Type')?.includes('application/json')) {
     data = await resp.json();
+    if (data?.[':type'] === 'sheet' && data?.data?.length === 1) {
+      if (data?.data[0]?.Value && typeof data?.data[0]?.Value === 'object') {
+        return data?.data[0]?.Value;
+      }
+    }
   } else if (resp?.headers?.get('Content-Type')?.includes('text/html')) {
     resp = await fetch(path);
     data = await resp.text().then((html) => {
