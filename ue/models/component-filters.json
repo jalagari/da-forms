@@ -7,6 +7,9 @@
     "...": "./section.json#/filters"
   },
   {
+    "...": "./form.json#/filters"
+  },
+  {
     "...": "./blocks/*.json#/filters"
   }
 ]
