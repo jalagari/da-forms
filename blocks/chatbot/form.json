@@ -1,0 +1,2429 @@
+{
+    "id": "$form",
+    "fieldType": "form",
+    "lang": "en-US",
+    "action": "/adobe/forms/af/submit/L2NvbnRlbnQvamFsYWdhcmkvYWxsL2pjcjpjb250ZW50L3Jvb3Qvc2VjdGlvbi9mb3JtXzE1NjczNjMwMDY=",
+    "properties": {
+        "fd:changeEventBehaviour": "deps",
+        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006",
+        "fd:schemaType": "BASIC",
+        "fd:isHamburgerMenuEnabled": false,
+        "fd:roleAttribute": null,
+        "fd:formDataEnabled": false,
+        "fd:customFunctionsUrl": "/adobe/forms/af/customfunctions/L2NvbnRlbnQvamFsYWdhcmkvYWxsL2pjcjpjb250ZW50L3Jvb3Qvc2VjdGlvbi9mb3JtXzE1NjczNjMwMDY=",
+        "fd:dataUrl": "/adobe/forms/af/data/L2NvbnRlbnQvamFsYWdhcmkvYWxsL2pjcjpjb250ZW50L3Jvb3Qvc2VjdGlvbi9mb3JtXzE1NjczNjMwMDY="
+    },
+    "events": {
+        "custom:setProperty": [
+            "$event.payload"
+        ]
+    },
+    ":itemsOrder": [
+        "personal_information",
+        "contact_information",
+        "additional_details"
+    ],
+    "adaptiveform": "0.14.2",
+    "metadata": {
+        "grammar": "json-formula-1.0.0",
+        "version": "1.0.0"
+    },
+    ":type": "fd/franklin/components/form/v1/form",
+    ":items": {
+        "personal_information": {
+            "id": "panelcontainer-3a49b75c59",
+            "fieldType": "panel",
+            "name": "personal_information",
+            "label": {
+                "value": "Personal Information"
+            },
+            "events": {
+                "custom:setProperty": [
+                    "$event.payload"
+                ]
+            },
+            "properties": {
+                "fd:dor": {
+                    "dorExclusion": false,
+                    "dorExcludeTitle": false,
+                    "dorExcludeDescription": false
+                },
+                "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information"
+            },
+            ":itemsOrder": [
+                "first_name",
+                "last_name",
+                "age",
+                "date_of_birth",
+                "profile_picture",
+                "gender",
+                "marital_status",
+                "hobbies"
+            ],
+            ":type": "core/fd/components/form/panelcontainer/v1/panelcontainer",
+            ":items": {
+                "first_name": {
+                    "id": "textinput-400472a990",
+                    "fieldType": "text-input",
+                    "name": "first_name",
+                    "visible": true,
+                    "description": "Enter your first name",
+                    "type": "string",
+                    "required": true,
+                    "enabled": true,
+                    "readOnly": false,
+                    "minLength": 5,
+                    "maxLength": 50,
+                    "label": {
+                        "value": "First Name"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/first_name"
+                    },
+                    ":type": "core/fd/components/form/textinput/v1/textinput"
+                },
+                "last_name": {
+                    "id": "textinput-5dba1787fa",
+                    "fieldType": "text-input",
+                    "name": "last_name",
+                    "visible": true,
+                    "description": "Enter your last name",
+                    "type": "string",
+                    "required": true,
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Last Name"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/last_name"
+                    },
+                    ":type": "core/fd/components/form/textinput/v1/textinput"
+                },
+                "age": {
+                    "id": "numberinput-5b1df7d4e1",
+                    "fieldType": "number-input",
+                    "name": "age",
+                    "visible": true,
+                    "description": "Enter your age",
+                    "type": "number",
+                    "required": true,
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Age"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/age"
+                    },
+                    "minimum": 18,
+                    "maximum": 75,
+                    ":type": "core/fd/components/form/numberinput/v1/numberinput"
+                },
+                "date_of_birth": {
+                    "id": "datepicker-8084a7218c",
+                    "fieldType": "date-input",
+                    "name": "date_of_birth",
+                    "visible": true,
+                    "description": "Enter your date of birth",
+                    "type": "string",
+                    "required": true,
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Date of Birth"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/date_of_birth"
+                    },
+                    "format": "date",
+                    ":type": "core/fd/components/form/datepicker/v1/datepicker"
+                },
+                "profile_picture": {
+                    "id": "fileinput-10fb7df474",
+                    "fieldType": "file-input",
+                    "name": "profile_picture",
+                    "visible": true,
+                    "description": "Upload your profile picture",
+                    "type": "file",
+                    "enabled": true,
+                    "readOnly": false,
+                    "accept": [],
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/profile_picture",
+                        "fd:buttonText": "Attach",
+                        "dragDropText": "Drag and Drop To Upload"
+                    },
+                    "label": {
+                        "value": "Profile Picture"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    ":type": "core/fd/components/form/fileinput/v2/fileinput"
+                },
+                "gender": {
+                    "id": "dropdown-7566358d35",
+                    "fieldType": "drop-down",
+                    "name": "gender",
+                    "visible": true,
+                    "description": "Select your gender",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Male",
+                        "Female",
+                        "Other"
+                    ],
+                    "label": {
+                        "value": "Gender"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/gender"
+                    },
+                    "enum": [
+                        "male",
+                        "female",
+                        "other"
+                    ],
+                    ":type": "core/fd/components/form/dropdown/v1/dropdown"
+                },
+                "marital_status": {
+                    "id": "radiobutton-b182168e73",
+                    "fieldType": "radio-group",
+                    "name": "marital_status",
+                    "visible": true,
+                    "description": "Select your marital status",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Single",
+                        "Married",
+                        "Divorced",
+                        "Widowed"
+                    ],
+                    "label": {
+                        "value": "Marital Status"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/marital_status"
+                    },
+                    "enum": [
+                        "single",
+                        "married",
+                        "divorced",
+                        "widowed"
+                    ],
+                    ":type": "core/fd/components/form/radiobutton/v1/radiobutton"
+                },
+                "hobbies": {
+                    "id": "checkboxgroup-81790e15f1",
+                    "fieldType": "checkbox-group",
+                    "name": "hobbies",
+                    "visible": true,
+                    "description": "Select your hobbies",
+                    "type": "string[]",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Reading",
+                        "Traveling",
+                        "Sports",
+                        "Music"
+                    ],
+                    "label": {
+                        "value": "Hobbies"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/hobbies"
+                    },
+                    "enum": [
+                        "reading",
+                        "traveling",
+                        "sports",
+                        "music"
+                    ],
+                    ":type": "core/fd/components/form/checkboxgroup/v1/checkboxgroup"
+                }
+            },
+            "items": [
+                {
+                    "id": "textinput-400472a990",
+                    "fieldType": "text-input",
+                    "name": "first_name",
+                    "visible": true,
+                    "description": "Enter your first name",
+                    "type": "string",
+                    "required": true,
+                    "enabled": true,
+                    "readOnly": false,
+                    "minLength": 5,
+                    "maxLength": 50,
+                    "label": {
+                        "value": "First Name"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/first_name"
+                    },
+                    ":type": "core/fd/components/form/textinput/v1/textinput"
+                },
+                {
+                    "id": "textinput-5dba1787fa",
+                    "fieldType": "text-input",
+                    "name": "last_name",
+                    "visible": true,
+                    "description": "Enter your last name",
+                    "type": "string",
+                    "required": true,
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Last Name"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/last_name"
+                    },
+                    ":type": "core/fd/components/form/textinput/v1/textinput"
+                },
+                {
+                    "id": "numberinput-5b1df7d4e1",
+                    "fieldType": "number-input",
+                    "name": "age",
+                    "visible": true,
+                    "description": "Enter your age",
+                    "type": "number",
+                    "required": true,
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Age"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/age"
+                    },
+                    "minimum": 18,
+                    "maximum": 75,
+                    ":type": "core/fd/components/form/numberinput/v1/numberinput"
+                },
+                {
+                    "id": "datepicker-8084a7218c",
+                    "fieldType": "date-input",
+                    "name": "date_of_birth",
+                    "visible": true,
+                    "description": "Enter your date of birth",
+                    "type": "string",
+                    "required": true,
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Date of Birth"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/date_of_birth"
+                    },
+                    "format": "date",
+                    ":type": "core/fd/components/form/datepicker/v1/datepicker"
+                },
+                {
+                    "id": "fileinput-10fb7df474",
+                    "fieldType": "file-input",
+                    "name": "profile_picture",
+                    "visible": true,
+                    "description": "Upload your profile picture",
+                    "type": "file",
+                    "enabled": true,
+                    "readOnly": false,
+                    "accept": [],
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/profile_picture",
+                        "fd:buttonText": "Attach",
+                        "dragDropText": "Drag and Drop To Upload"
+                    },
+                    "label": {
+                        "value": "Profile Picture"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    ":type": "core/fd/components/form/fileinput/v2/fileinput"
+                },
+                {
+                    "id": "dropdown-7566358d35",
+                    "fieldType": "drop-down",
+                    "name": "gender",
+                    "visible": true,
+                    "description": "Select your gender",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Male",
+                        "Female",
+                        "Other"
+                    ],
+                    "label": {
+                        "value": "Gender"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/gender"
+                    },
+                    "enum": [
+                        "male",
+                        "female",
+                        "other"
+                    ],
+                    ":type": "core/fd/components/form/dropdown/v1/dropdown"
+                },
+                {
+                    "id": "radiobutton-b182168e73",
+                    "fieldType": "radio-group",
+                    "name": "marital_status",
+                    "visible": true,
+                    "description": "Select your marital status",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Single",
+                        "Married",
+                        "Divorced",
+                        "Widowed"
+                    ],
+                    "label": {
+                        "value": "Marital Status"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/marital_status"
+                    },
+                    "enum": [
+                        "single",
+                        "married",
+                        "divorced",
+                        "widowed"
+                    ],
+                    ":type": "core/fd/components/form/radiobutton/v1/radiobutton"
+                },
+                {
+                    "id": "checkboxgroup-81790e15f1",
+                    "fieldType": "checkbox-group",
+                    "name": "hobbies",
+                    "visible": true,
+                    "description": "Select your hobbies",
+                    "type": "string[]",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Reading",
+                        "Traveling",
+                        "Sports",
+                        "Music"
+                    ],
+                    "label": {
+                        "value": "Hobbies"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/hobbies"
+                    },
+                    "enum": [
+                        "reading",
+                        "traveling",
+                        "sports",
+                        "music"
+                    ],
+                    ":type": "core/fd/components/form/checkboxgroup/v1/checkboxgroup"
+                }
+            ]
+        },
+        "contact_information": {
+            "id": "panelcontainer-0ac8c100e8",
+            "fieldType": "panel",
+            "name": "contact_information",
+            "label": {
+                "value": "Contact Information"
+            },
+            "events": {
+                "custom:setProperty": [
+                    "$event.payload"
+                ]
+            },
+            "properties": {
+                "fd:dor": {
+                    "dorExclusion": false,
+                    "dorExcludeTitle": false,
+                    "dorExcludeDescription": false
+                },
+                "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/contact_information"
+            },
+            ":itemsOrder": [
+                "email_address",
+                "phone_number",
+                "preferred_contact_method",
+                "contact_time"
+            ],
+            ":type": "core/fd/components/form/panelcontainer/v1/panelcontainer",
+            ":items": {
+                "email_address": {
+                    "id": "textinput-a85ef0ebe0",
+                    "fieldType": "text-input",
+                    "name": "email_address",
+                    "visible": true,
+                    "description": "Please enter your email address.",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Email Address"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/contact_information/email_address"
+                    },
+                    ":type": "core/fd/components/form/textinput/v1/textinput"
+                },
+                "phone_number": {
+                    "id": "numberinput-fff9ee4616",
+                    "fieldType": "number-input",
+                    "name": "phone_number",
+                    "visible": true,
+                    "description": "Please enter your phone number.",
+                    "type": "number",
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Phone Number"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/contact_information/phone_number"
+                    },
+                    ":type": "core/fd/components/form/numberinput/v1/numberinput"
+                },
+                "preferred_contact_method": {
+                    "id": "dropdown-473bf7df23",
+                    "fieldType": "drop-down",
+                    "name": "preferred_contact_method",
+                    "visible": true,
+                    "description": "Please select your preferred contact method.",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Email",
+                        "Phone",
+                        "Mail"
+                    ],
+                    "label": {
+                        "value": "Preferred Contact Method"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/contact_information/preferred_contact_method"
+                    },
+                    "enum": [
+                        "email",
+                        "phone",
+                        "mail"
+                    ],
+                    ":type": "core/fd/components/form/dropdown/v1/dropdown"
+                },
+                "contact_time": {
+                    "id": "radiobutton-cf313e872b",
+                    "fieldType": "radio-group",
+                    "name": "contact_time",
+                    "visible": true,
+                    "description": "Please select your preferred contact time.",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Morning",
+                        "Afternoon",
+                        "Evening"
+                    ],
+                    "label": {
+                        "value": "Preferred Contact Time"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/contact_information/contact_time"
+                    },
+                    "enum": [
+                        "morning",
+                        "afternoon",
+                        "evening"
+                    ],
+                    ":type": "core/fd/components/form/radiobutton/v1/radiobutton"
+                }
+            },
+            "items": [
+                {
+                    "id": "textinput-a85ef0ebe0",
+                    "fieldType": "text-input",
+                    "name": "email_address",
+                    "visible": true,
+                    "description": "Please enter your email address.",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Email Address"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/contact_information/email_address"
+                    },
+                    ":type": "core/fd/components/form/textinput/v1/textinput"
+                },
+                {
+                    "id": "numberinput-fff9ee4616",
+                    "fieldType": "number-input",
+                    "name": "phone_number",
+                    "visible": true,
+                    "description": "Please enter your phone number.",
+                    "type": "number",
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Phone Number"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/contact_information/phone_number"
+                    },
+                    ":type": "core/fd/components/form/numberinput/v1/numberinput"
+                },
+                {
+                    "id": "dropdown-473bf7df23",
+                    "fieldType": "drop-down",
+                    "name": "preferred_contact_method",
+                    "visible": true,
+                    "description": "Please select your preferred contact method.",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Email",
+                        "Phone",
+                        "Mail"
+                    ],
+                    "label": {
+                        "value": "Preferred Contact Method"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/contact_information/preferred_contact_method"
+                    },
+                    "enum": [
+                        "email",
+                        "phone",
+                        "mail"
+                    ],
+                    ":type": "core/fd/components/form/dropdown/v1/dropdown"
+                },
+                {
+                    "id": "radiobutton-cf313e872b",
+                    "fieldType": "radio-group",
+                    "name": "contact_time",
+                    "visible": true,
+                    "description": "Please select your preferred contact time.",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Morning",
+                        "Afternoon",
+                        "Evening"
+                    ],
+                    "label": {
+                        "value": "Preferred Contact Time"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/contact_information/contact_time"
+                    },
+                    "enum": [
+                        "morning",
+                        "afternoon",
+                        "evening"
+                    ],
+                    ":type": "core/fd/components/form/radiobutton/v1/radiobutton"
+                }
+            ]
+        },
+        "additional_details": {
+            "id": "panelcontainer-f661d9e285",
+            "fieldType": "panel",
+            "name": "additional_details",
+            "label": {
+                "value": "Additional Details"
+            },
+            "events": {
+                "custom:setProperty": [
+                    "$event.payload"
+                ]
+            },
+            "properties": {
+                "fd:dor": {
+                    "dorExclusion": false,
+                    "dorExcludeTitle": false,
+                    "dorExcludeDescription": false
+                },
+                "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/additional_details"
+            },
+            ":itemsOrder": [
+                "newsletter_subscription_1751827363368",
+                "newsletter_subscription",
+                "terms_and_conditions",
+                "submit"
+            ],
+            ":type": "core/fd/components/form/panelcontainer/v1/panelcontainer",
+            ":items": {
+                "newsletter_subscription_1751827363368": {
+                    "id": "checkboxgroup-a37967776b",
+                    "fieldType": "checkbox-group",
+                    "name": "newsletter_subscription",
+                    "visible": true,
+                    "description": "Check the box to subscribe to our newsletter.",
+                    "type": "string[]",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Subscribe to Newsletter"
+                    ],
+                    "label": {
+                        "value": "Newsletter Subscription"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/additional_details/newsletter_subscription_1751827363368"
+                    },
+                    "enum": [
+                        "subscribe"
+                    ],
+                    ":type": "core/fd/components/form/checkboxgroup/v1/checkboxgroup"
+                },
+                "newsletter_subscription": {
+                    "id": "checkboxgroup-e2a42588a7",
+                    "fieldType": "checkbox-group",
+                    "name": "newsletter_subscription_options",
+                    "visible": true,
+                    "description": "Choose your newsletter subscription frequency.",
+                    "type": "string[]",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Daily",
+                        "Weekly",
+                        "Monthly"
+                    ],
+                    "label": {
+                        "value": "Newsletter Schedule"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/additional_details/newsletter_subscription"
+                    },
+                    "enum": [
+                        "daily",
+                        "weekly",
+                        "monthly"
+                    ],
+                    ":type": "core/fd/components/form/checkboxgroup/v1/checkboxgroup"
+                },
+                "terms_and_conditions": {
+                    "id": "checkboxgroup-2af0a6e373",
+                    "fieldType": "checkbox-group",
+                    "name": "terms_and_conditions",
+                    "visible": true,
+                    "description": "Please agree to the terms and conditions.",
+                    "type": "string[]",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "I agree to the terms and conditions"
+                    ],
+                    "label": {
+                        "value": "Terms and Conditions"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/additional_details/terms_and_conditions"
+                    },
+                    "enum": [
+                        "agree"
+                    ],
+                    ":type": "core/fd/components/form/checkboxgroup/v1/checkboxgroup"
+                },
+                "submit": {
+                    "id": "button-22b83c8c4b",
+                    "fieldType": "button",
+                    "name": "submit",
+                    "visible": true,
+                    "type": "string",
+                    "enabled": true,
+                    "buttonType": "button",
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/additional_details/submit",
+                        "fd:buttonType": "button"
+                    },
+                    "label": {
+                        "value": "Submit"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    ":type": "core/fd/components/form/button/v1/button"
+                }
+            },
+            "items": [
+                {
+                    "id": "checkboxgroup-a37967776b",
+                    "fieldType": "checkbox-group",
+                    "name": "newsletter_subscription",
+                    "visible": true,
+                    "description": "Check the box to subscribe to our newsletter.",
+                    "type": "string[]",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Subscribe to Newsletter"
+                    ],
+                    "label": {
+                        "value": "Newsletter Subscription"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/additional_details/newsletter_subscription_1751827363368"
+                    },
+                    "enum": [
+                        "subscribe"
+                    ],
+                    ":type": "core/fd/components/form/checkboxgroup/v1/checkboxgroup"
+                },
+                {
+                    "id": "checkboxgroup-e2a42588a7",
+                    "fieldType": "checkbox-group",
+                    "name": "newsletter_subscription_options",
+                    "visible": true,
+                    "description": "Choose your newsletter subscription frequency.",
+                    "type": "string[]",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Daily",
+                        "Weekly",
+                        "Monthly"
+                    ],
+                    "label": {
+                        "value": "Newsletter Schedule"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/additional_details/newsletter_subscription"
+                    },
+                    "enum": [
+                        "daily",
+                        "weekly",
+                        "monthly"
+                    ],
+                    ":type": "core/fd/components/form/checkboxgroup/v1/checkboxgroup"
+                },
+                {
+                    "id": "checkboxgroup-2af0a6e373",
+                    "fieldType": "checkbox-group",
+                    "name": "terms_and_conditions",
+                    "visible": true,
+                    "description": "Please agree to the terms and conditions.",
+                    "type": "string[]",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "I agree to the terms and conditions"
+                    ],
+                    "label": {
+                        "value": "Terms and Conditions"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/additional_details/terms_and_conditions"
+                    },
+                    "enum": [
+                        "agree"
+                    ],
+                    ":type": "core/fd/components/form/checkboxgroup/v1/checkboxgroup"
+                },
+                {
+                    "id": "button-22b83c8c4b",
+                    "fieldType": "button",
+                    "name": "submit",
+                    "visible": true,
+                    "type": "string",
+                    "enabled": true,
+                    "buttonType": "button",
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/additional_details/submit",
+                        "fd:buttonType": "button"
+                    },
+                    "label": {
+                        "value": "Submit"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    ":type": "core/fd/components/form/button/v1/button"
+                }
+            ]
+        }
+    },
+    "items": [
+        {
+            "index": 0,
+            "id": "panelcontainer-3a49b75c59",
+            "fieldType": "panel",
+            "name": "personal_information",
+            "label": {
+                "value": "Personal Information",
+                "visible": true,
+                "richText": false
+            },
+            "events": {
+                "custom:setProperty": [
+                    "$event.payload"
+                ]
+            },
+            "properties": {
+                "fd:dor": {
+                    "dorExclusion": false,
+                    "dorExcludeTitle": false,
+                    "dorExcludeDescription": false
+                },
+                "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information"
+            },
+            ":itemsOrder": [
+                "first_name",
+                "last_name",
+                "age",
+                "date_of_birth",
+                "profile_picture",
+                "gender",
+                "marital_status",
+                "hobbies"
+            ],
+            ":type": "core/fd/components/form/panelcontainer/v1/panelcontainer",
+            ":items": {
+                "first_name": {
+                    "id": "textinput-400472a990",
+                    "fieldType": "text-input",
+                    "name": "first_name",
+                    "visible": true,
+                    "description": "Enter your first name",
+                    "type": "string",
+                    "required": true,
+                    "enabled": true,
+                    "readOnly": false,
+                    "minLength": 5,
+                    "maxLength": 50,
+                    "label": {
+                        "value": "First Name"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/first_name"
+                    },
+                    ":type": "core/fd/components/form/textinput/v1/textinput"
+                },
+                "last_name": {
+                    "id": "textinput-5dba1787fa",
+                    "fieldType": "text-input",
+                    "name": "last_name",
+                    "visible": true,
+                    "description": "Enter your last name",
+                    "type": "string",
+                    "required": true,
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Last Name"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/last_name"
+                    },
+                    ":type": "core/fd/components/form/textinput/v1/textinput"
+                },
+                "age": {
+                    "id": "numberinput-5b1df7d4e1",
+                    "fieldType": "number-input",
+                    "name": "age",
+                    "visible": true,
+                    "description": "Enter your age",
+                    "type": "number",
+                    "required": true,
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Age"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/age"
+                    },
+                    "minimum": 18,
+                    "maximum": 75,
+                    ":type": "core/fd/components/form/numberinput/v1/numberinput"
+                },
+                "date_of_birth": {
+                    "id": "datepicker-8084a7218c",
+                    "fieldType": "date-input",
+                    "name": "date_of_birth",
+                    "visible": true,
+                    "description": "Enter your date of birth",
+                    "type": "string",
+                    "required": true,
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Date of Birth"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/date_of_birth"
+                    },
+                    "format": "date",
+                    ":type": "core/fd/components/form/datepicker/v1/datepicker"
+                },
+                "profile_picture": {
+                    "id": "fileinput-10fb7df474",
+                    "fieldType": "file-input",
+                    "name": "profile_picture",
+                    "visible": true,
+                    "description": "Upload your profile picture",
+                    "type": "file",
+                    "enabled": true,
+                    "readOnly": false,
+                    "accept": [],
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/profile_picture",
+                        "fd:buttonText": "Attach",
+                        "dragDropText": "Drag and Drop To Upload"
+                    },
+                    "label": {
+                        "value": "Profile Picture"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    ":type": "core/fd/components/form/fileinput/v2/fileinput"
+                },
+                "gender": {
+                    "id": "dropdown-7566358d35",
+                    "fieldType": "drop-down",
+                    "name": "gender",
+                    "visible": true,
+                    "description": "Select your gender",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Male",
+                        "Female",
+                        "Other"
+                    ],
+                    "label": {
+                        "value": "Gender"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/gender"
+                    },
+                    "enum": [
+                        "male",
+                        "female",
+                        "other"
+                    ],
+                    ":type": "core/fd/components/form/dropdown/v1/dropdown"
+                },
+                "marital_status": {
+                    "id": "radiobutton-b182168e73",
+                    "fieldType": "radio-group",
+                    "name": "marital_status",
+                    "visible": true,
+                    "description": "Select your marital status",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Single",
+                        "Married",
+                        "Divorced",
+                        "Widowed"
+                    ],
+                    "label": {
+                        "value": "Marital Status"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/marital_status"
+                    },
+                    "enum": [
+                        "single",
+                        "married",
+                        "divorced",
+                        "widowed"
+                    ],
+                    ":type": "core/fd/components/form/radiobutton/v1/radiobutton"
+                },
+                "hobbies": {
+                    "id": "checkboxgroup-81790e15f1",
+                    "fieldType": "checkbox-group",
+                    "name": "hobbies",
+                    "visible": true,
+                    "description": "Select your hobbies",
+                    "type": "string[]",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Reading",
+                        "Traveling",
+                        "Sports",
+                        "Music"
+                    ],
+                    "label": {
+                        "value": "Hobbies"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/hobbies"
+                    },
+                    "enum": [
+                        "reading",
+                        "traveling",
+                        "sports",
+                        "music"
+                    ],
+                    ":type": "core/fd/components/form/checkboxgroup/v1/checkboxgroup"
+                }
+            },
+            "items": [
+                {
+                    "index": 0,
+                    "id": "textinput-400472a990",
+                    "fieldType": "text-input",
+                    "name": "first_name",
+                    "visible": true,
+                    "description": "Enter your first name",
+                    "type": "string",
+                    "required": true,
+                    "enabled": true,
+                    "readOnly": false,
+                    "minLength": 5,
+                    "maxLength": 50,
+                    "label": {
+                        "value": "First Name",
+                        "visible": true,
+                        "richText": false
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/first_name"
+                    },
+                    ":type": "core/fd/components/form/textinput/v1/textinput",
+                    "qualifiedName": "$form.personal_information.first_name",
+                    "displayValue": null
+                },
+                {
+                    "index": 1,
+                    "id": "textinput-5dba1787fa",
+                    "fieldType": "text-input",
+                    "name": "last_name",
+                    "visible": true,
+                    "description": "Enter your last name",
+                    "type": "string",
+                    "required": true,
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Last Name",
+                        "visible": true,
+                        "richText": false
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/last_name"
+                    },
+                    ":type": "core/fd/components/form/textinput/v1/textinput",
+                    "qualifiedName": "$form.personal_information.last_name",
+                    "displayValue": null
+                },
+                {
+                    "index": 2,
+                    "id": "numberinput-5b1df7d4e1",
+                    "fieldType": "number-input",
+                    "name": "age",
+                    "visible": true,
+                    "description": "Enter your age",
+                    "type": "number",
+                    "required": true,
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Age",
+                        "visible": true,
+                        "richText": false
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/age"
+                    },
+                    "minimum": 18,
+                    "maximum": 75,
+                    ":type": "core/fd/components/form/numberinput/v1/numberinput",
+                    "qualifiedName": "$form.personal_information.age",
+                    "editValue": null,
+                    "displayValue": null
+                },
+                {
+                    "index": 3,
+                    "id": "datepicker-8084a7218c",
+                    "fieldType": "date-input",
+                    "name": "date_of_birth",
+                    "visible": true,
+                    "description": "Enter your date of birth",
+                    "type": "string",
+                    "required": true,
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Date of Birth",
+                        "visible": true,
+                        "richText": false
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/date_of_birth"
+                    },
+                    "format": "date",
+                    ":type": "core/fd/components/form/datepicker/v1/datepicker",
+                    "editFormat": "date|short",
+                    "displayFormat": "date|short",
+                    "placeholder": "dd/MM/YYYY",
+                    "qualifiedName": "$form.personal_information.date_of_birth",
+                    "editValue": null,
+                    "displayValue": null
+                },
+                {
+                    "index": 4,
+                    "id": "fileinput-10fb7df474",
+                    "fieldType": "file-input",
+                    "name": "profile_picture",
+                    "visible": true,
+                    "description": "Upload your profile picture",
+                    "type": "file",
+                    "enabled": true,
+                    "readOnly": false,
+                    "accept": [],
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/profile_picture",
+                        "fd:buttonText": "Attach",
+                        "dragDropText": "Drag and Drop To Upload"
+                    },
+                    "label": {
+                        "value": "Profile Picture",
+                        "visible": true,
+                        "richText": false
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    ":type": "core/fd/components/form/fileinput/v2/fileinput",
+                    "required": false,
+                    "maxFileSize": "2MB",
+                    "qualifiedName": "$form.personal_information.profile_picture",
+                    "displayValue": null
+                },
+                {
+                    "index": 5,
+                    "id": "dropdown-7566358d35",
+                    "fieldType": "drop-down",
+                    "name": "gender",
+                    "visible": true,
+                    "description": "Select your gender",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Male",
+                        "Female",
+                        "Other"
+                    ],
+                    "label": {
+                        "value": "Gender",
+                        "visible": true,
+                        "richText": false
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/gender"
+                    },
+                    "enum": [
+                        "male",
+                        "female",
+                        "other"
+                    ],
+                    ":type": "core/fd/components/form/dropdown/v1/dropdown",
+                    "required": false,
+                    "qualifiedName": "$form.personal_information.gender",
+                    "displayValue": null
+                },
+                {
+                    "index": 6,
+                    "id": "radiobutton-b182168e73",
+                    "fieldType": "radio-group",
+                    "name": "marital_status",
+                    "visible": true,
+                    "description": "Select your marital status",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Single",
+                        "Married",
+                        "Divorced",
+                        "Widowed"
+                    ],
+                    "label": {
+                        "value": "Marital Status",
+                        "visible": true,
+                        "richText": false
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/marital_status"
+                    },
+                    "enum": [
+                        "single",
+                        "married",
+                        "divorced",
+                        "widowed"
+                    ],
+                    ":type": "core/fd/components/form/radiobutton/v1/radiobutton",
+                    "required": false,
+                    "qualifiedName": "$form.personal_information.marital_status",
+                    "displayValue": null
+                },
+                {
+                    "index": 7,
+                    "id": "checkboxgroup-81790e15f1",
+                    "fieldType": "checkbox-group",
+                    "name": "hobbies",
+                    "visible": true,
+                    "description": "Select your hobbies",
+                    "type": "string[]",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Reading",
+                        "Traveling",
+                        "Sports",
+                        "Music"
+                    ],
+                    "label": {
+                        "value": "Hobbies",
+                        "visible": true,
+                        "richText": false
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/personal_information/hobbies"
+                    },
+                    "enum": [
+                        "reading",
+                        "traveling",
+                        "sports",
+                        "music"
+                    ],
+                    ":type": "core/fd/components/form/checkboxgroup/v1/checkboxgroup",
+                    "required": false,
+                    "qualifiedName": "$form.personal_information.hobbies",
+                    "displayValue": null
+                }
+            ],
+            "enabled": true,
+            "readOnly": false,
+            "visible": true,
+            "required": false,
+            "minItems": 8,
+            "maxItems": 8,
+            "initialItems": 8,
+            "qualifiedName": "$form.personal_information"
+        },
+        {
+            "index": 1,
+            "id": "panelcontainer-0ac8c100e8",
+            "fieldType": "panel",
+            "name": "contact_information",
+            "label": {
+                "value": "Contact Information",
+                "visible": true,
+                "richText": false
+            },
+            "events": {
+                "custom:setProperty": [
+                    "$event.payload"
+                ]
+            },
+            "properties": {
+                "fd:dor": {
+                    "dorExclusion": false,
+                    "dorExcludeTitle": false,
+                    "dorExcludeDescription": false
+                },
+                "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/contact_information"
+            },
+            ":itemsOrder": [
+                "email_address",
+                "phone_number",
+                "preferred_contact_method",
+                "contact_time"
+            ],
+            ":type": "core/fd/components/form/panelcontainer/v1/panelcontainer",
+            ":items": {
+                "email_address": {
+                    "id": "textinput-a85ef0ebe0",
+                    "fieldType": "text-input",
+                    "name": "email_address",
+                    "visible": true,
+                    "description": "Please enter your email address.",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Email Address"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/contact_information/email_address"
+                    },
+                    ":type": "core/fd/components/form/textinput/v1/textinput"
+                },
+                "phone_number": {
+                    "id": "numberinput-fff9ee4616",
+                    "fieldType": "number-input",
+                    "name": "phone_number",
+                    "visible": true,
+                    "description": "Please enter your phone number.",
+                    "type": "number",
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Phone Number"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/contact_information/phone_number"
+                    },
+                    ":type": "core/fd/components/form/numberinput/v1/numberinput"
+                },
+                "preferred_contact_method": {
+                    "id": "dropdown-473bf7df23",
+                    "fieldType": "drop-down",
+                    "name": "preferred_contact_method",
+                    "visible": true,
+                    "description": "Please select your preferred contact method.",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Email",
+                        "Phone",
+                        "Mail"
+                    ],
+                    "label": {
+                        "value": "Preferred Contact Method"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/contact_information/preferred_contact_method"
+                    },
+                    "enum": [
+                        "email",
+                        "phone",
+                        "mail"
+                    ],
+                    ":type": "core/fd/components/form/dropdown/v1/dropdown"
+                },
+                "contact_time": {
+                    "id": "radiobutton-cf313e872b",
+                    "fieldType": "radio-group",
+                    "name": "contact_time",
+                    "visible": true,
+                    "description": "Please select your preferred contact time.",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Morning",
+                        "Afternoon",
+                        "Evening"
+                    ],
+                    "label": {
+                        "value": "Preferred Contact Time"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/contact_information/contact_time"
+                    },
+                    "enum": [
+                        "morning",
+                        "afternoon",
+                        "evening"
+                    ],
+                    ":type": "core/fd/components/form/radiobutton/v1/radiobutton"
+                }
+            },
+            "items": [
+                {
+                    "index": 0,
+                    "id": "textinput-a85ef0ebe0",
+                    "fieldType": "text-input",
+                    "name": "email_address",
+                    "visible": true,
+                    "description": "Please enter your email address.",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Email Address",
+                        "visible": true,
+                        "richText": false
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/contact_information/email_address"
+                    },
+                    ":type": "core/fd/components/form/textinput/v1/textinput",
+                    "required": false,
+                    "qualifiedName": "$form.contact_information.email_address",
+                    "displayValue": null
+                },
+                {
+                    "index": 1,
+                    "id": "numberinput-fff9ee4616",
+                    "fieldType": "number-input",
+                    "name": "phone_number",
+                    "visible": true,
+                    "description": "Please enter your phone number.",
+                    "type": "number",
+                    "enabled": true,
+                    "readOnly": false,
+                    "label": {
+                        "value": "Phone Number",
+                        "visible": true,
+                        "richText": false
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/contact_information/phone_number"
+                    },
+                    ":type": "core/fd/components/form/numberinput/v1/numberinput",
+                    "required": false,
+                    "qualifiedName": "$form.contact_information.phone_number",
+                    "editValue": null,
+                    "displayValue": null
+                },
+                {
+                    "index": 2,
+                    "id": "dropdown-473bf7df23",
+                    "fieldType": "drop-down",
+                    "name": "preferred_contact_method",
+                    "visible": true,
+                    "description": "Please select your preferred contact method.",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Email",
+                        "Phone",
+                        "Mail"
+                    ],
+                    "label": {
+                        "value": "Preferred Contact Method",
+                        "visible": true,
+                        "richText": false
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/contact_information/preferred_contact_method"
+                    },
+                    "enum": [
+                        "email",
+                        "phone",
+                        "mail"
+                    ],
+                    ":type": "core/fd/components/form/dropdown/v1/dropdown",
+                    "required": false,
+                    "qualifiedName": "$form.contact_information.preferred_contact_method",
+                    "displayValue": null
+                },
+                {
+                    "index": 3,
+                    "id": "radiobutton-cf313e872b",
+                    "fieldType": "radio-group",
+                    "name": "contact_time",
+                    "visible": true,
+                    "description": "Please select your preferred contact time.",
+                    "type": "string",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Morning",
+                        "Afternoon",
+                        "Evening"
+                    ],
+                    "label": {
+                        "value": "Preferred Contact Time",
+                        "visible": true,
+                        "richText": false
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/contact_information/contact_time"
+                    },
+                    "enum": [
+                        "morning",
+                        "afternoon",
+                        "evening"
+                    ],
+                    ":type": "core/fd/components/form/radiobutton/v1/radiobutton",
+                    "required": false,
+                    "qualifiedName": "$form.contact_information.contact_time",
+                    "displayValue": null
+                }
+            ],
+            "enabled": true,
+            "readOnly": false,
+            "visible": true,
+            "required": false,
+            "minItems": 4,
+            "maxItems": 4,
+            "initialItems": 4,
+            "qualifiedName": "$form.contact_information"
+        },
+        {
+            "index": 2,
+            "id": "panelcontainer-f661d9e285",
+            "fieldType": "panel",
+            "name": "additional_details",
+            "label": {
+                "value": "Additional Details",
+                "visible": true,
+                "richText": false
+            },
+            "events": {
+                "custom:setProperty": [
+                    "$event.payload"
+                ]
+            },
+            "properties": {
+                "fd:dor": {
+                    "dorExclusion": false,
+                    "dorExcludeTitle": false,
+                    "dorExcludeDescription": false
+                },
+                "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/additional_details"
+            },
+            ":itemsOrder": [
+                "newsletter_subscription_1751827363368",
+                "newsletter_subscription",
+                "terms_and_conditions",
+                "submit"
+            ],
+            ":type": "core/fd/components/form/panelcontainer/v1/panelcontainer",
+            ":items": {
+                "newsletter_subscription_1751827363368": {
+                    "id": "checkboxgroup-a37967776b",
+                    "fieldType": "checkbox-group",
+                    "name": "newsletter_subscription",
+                    "visible": true,
+                    "description": "Check the box to subscribe to our newsletter.",
+                    "type": "string[]",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Subscribe to Newsletter"
+                    ],
+                    "label": {
+                        "value": "Newsletter Subscription"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/additional_details/newsletter_subscription_1751827363368"
+                    },
+                    "enum": [
+                        "subscribe"
+                    ],
+                    ":type": "core/fd/components/form/checkboxgroup/v1/checkboxgroup"
+                },
+                "newsletter_subscription": {
+                    "id": "checkboxgroup-e2a42588a7",
+                    "fieldType": "checkbox-group",
+                    "name": "newsletter_subscription_options",
+                    "visible": true,
+                    "description": "Choose your newsletter subscription frequency.",
+                    "type": "string[]",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Daily",
+                        "Weekly",
+                        "Monthly"
+                    ],
+                    "label": {
+                        "value": "Newsletter Schedule"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/additional_details/newsletter_subscription"
+                    },
+                    "enum": [
+                        "daily",
+                        "weekly",
+                        "monthly"
+                    ],
+                    ":type": "core/fd/components/form/checkboxgroup/v1/checkboxgroup"
+                },
+                "terms_and_conditions": {
+                    "id": "checkboxgroup-2af0a6e373",
+                    "fieldType": "checkbox-group",
+                    "name": "terms_and_conditions",
+                    "visible": true,
+                    "description": "Please agree to the terms and conditions.",
+                    "type": "string[]",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "I agree to the terms and conditions"
+                    ],
+                    "label": {
+                        "value": "Terms and Conditions"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/additional_details/terms_and_conditions"
+                    },
+                    "enum": [
+                        "agree"
+                    ],
+                    ":type": "core/fd/components/form/checkboxgroup/v1/checkboxgroup"
+                },
+                "submit": {
+                    "id": "button-22b83c8c4b",
+                    "fieldType": "button",
+                    "name": "submit",
+                    "visible": true,
+                    "type": "string",
+                    "enabled": true,
+                    "buttonType": "button",
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/additional_details/submit",
+                        "fd:buttonType": "button"
+                    },
+                    "label": {
+                        "value": "Submit"
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    ":type": "core/fd/components/form/button/v1/button"
+                }
+            },
+            "items": [
+                {
+                    "index": 0,
+                    "id": "checkboxgroup-a37967776b",
+                    "fieldType": "checkbox-group",
+                    "name": "newsletter_subscription",
+                    "visible": true,
+                    "description": "Check the box to subscribe to our newsletter.",
+                    "type": "string[]",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Subscribe to Newsletter"
+                    ],
+                    "label": {
+                        "value": "Newsletter Subscription",
+                        "visible": true,
+                        "richText": false
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/additional_details/newsletter_subscription_1751827363368"
+                    },
+                    "enum": [
+                        "subscribe"
+                    ],
+                    ":type": "core/fd/components/form/checkboxgroup/v1/checkboxgroup",
+                    "required": false,
+                    "qualifiedName": "$form.additional_details.newsletter_subscription",
+                    "displayValue": null
+                },
+                {
+                    "index": 1,
+                    "id": "checkboxgroup-e2a42588a7",
+                    "fieldType": "checkbox-group",
+                    "name": "newsletter_subscription_options",
+                    "visible": true,
+                    "description": "Choose your newsletter subscription frequency.",
+                    "type": "string[]",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "Daily",
+                        "Weekly",
+                        "Monthly"
+                    ],
+                    "label": {
+                        "value": "Newsletter Schedule",
+                        "visible": true,
+                        "richText": false
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/additional_details/newsletter_subscription"
+                    },
+                    "enum": [
+                        "daily",
+                        "weekly",
+                        "monthly"
+                    ],
+                    ":type": "core/fd/components/form/checkboxgroup/v1/checkboxgroup",
+                    "required": false,
+                    "qualifiedName": "$form.additional_details.newsletter_subscription_options",
+                    "displayValue": null
+                },
+                {
+                    "index": 2,
+                    "id": "checkboxgroup-2af0a6e373",
+                    "fieldType": "checkbox-group",
+                    "name": "terms_and_conditions",
+                    "visible": true,
+                    "description": "Please agree to the terms and conditions.",
+                    "type": "string[]",
+                    "enabled": true,
+                    "readOnly": false,
+                    "enforceEnum": true,
+                    "enumNames": [
+                        "I agree to the terms and conditions"
+                    ],
+                    "label": {
+                        "value": "Terms and Conditions",
+                        "visible": true,
+                        "richText": false
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "afs:layout": {
+                            "orientation": "horizontal"
+                        },
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/additional_details/terms_and_conditions"
+                    },
+                    "enum": [
+                        "agree"
+                    ],
+                    ":type": "core/fd/components/form/checkboxgroup/v1/checkboxgroup",
+                    "required": false,
+                    "qualifiedName": "$form.additional_details.terms_and_conditions",
+                    "displayValue": null
+                },
+                {
+                    "index": 3,
+                    "id": "button-22b83c8c4b",
+                    "fieldType": "button",
+                    "name": "submit",
+                    "visible": true,
+                    "type": "string",
+                    "enabled": true,
+                    "buttonType": "button",
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false
+                        },
+                        "fd:path": "/content/jalagari/all/jcr:content/root/section/form_1567363006/additional_details/submit",
+                        "fd:buttonType": "button"
+                    },
+                    "label": {
+                        "value": "Submit",
+                        "visible": true,
+                        "richText": false
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    ":type": "core/fd/components/form/button/v1/button",
+                    "required": false,
+                    "qualifiedName": "$form.additional_details.submit",
+                    "displayValue": null
+                }
+            ],
+            "enabled": true,
+            "readOnly": false,
+            "visible": true,
+            "required": false,
+            "minItems": 4,
+            "maxItems": 4,
+            "initialItems": 4,
+            "qualifiedName": "$form.additional_details"
+        }
+    ],
+    "minItems": 3,
+    "maxItems": 3,
+    "initialItems": 3,
+    "index": 0,
+    "qualifiedName": "$form"
+}
