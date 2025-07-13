@@ -311,6 +311,9 @@ export default class Form extends EventTarget {
   async updateFormData(data) {
     console.log('Updating form data', data);
     this.instance.importData(data);
+    if (window.myForm) {
+      window.myForm.importData(data);
+    }
     console.log('Form data updated');
   }
 

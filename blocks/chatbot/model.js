@@ -209,22 +209,22 @@ class AIModel {
         - **Explicit User Refusal:** If user says "skip", "don't want to", "I won't say", etc.:
             - Set \`value\` to \`null\`
             - Set \`confidence\` to \`1.0\`
-            - Set \`reasoning\` to "User explicitly refused to provide this information."
+            - Set \`reasoning\` to "User explicitly refused to provide this information"
         - **Information Not Found:** If field isn't mentioned:
             - Set \`value\` to \`null\`
             - Set \`confidence\` to \`0.0\`
-            - Set \`reasoning\` to "Information not found in the provided content."
+            - Set \`reasoning\` to "Information not found in the provided content"
         - **For enum fields:** Choose the closest matching option from the enum list
         - **For boolean fields:** Convert yes/no responses to true/false
         
         CRITICAL JSON FORMATTING REQUIREMENTS:
         1. ALWAYS use double quotes for all strings (never single quotes)
-        2. ALWAYS properly escape quotes within strings using backslash: \\"
+        2. NEVER use quotes, apostrophes, or special characters in reasoning text
         3. ALWAYS close all quotes, brackets, and braces
         4. NEVER include trailing commas
         5. NEVER include unescaped quotes, apostrophes, or special characters that break JSON
         6. ALWAYS ensure the JSON is valid by checking that all opening brackets/braces have matching closing ones
-        7. If reasoning text contains quotes or apostrophes, escape them properly: \\" or \\'
+        7. For reasoning text: Use simple, clear explanations without quotes or apostrophes
         8. Test your JSON mentally before returning - ensure it can be parsed
         
         CRITICAL: Your final output must be a single JSON object where each field name from the schema is a key, and the value is an object containing the extracted data. Do not include any other text or explanations.
@@ -235,19 +235,19 @@ class AIModel {
             "value": "John",
             "confidence": 0.95,
             "id": "fieldId",
-            "reasoning": "The user said \\"My name is John.\\""
+            "reasoning": "The user stated their name is John"
           },
           "email": {
             "value": "john@example.com",
             "confidence": 0.9,
             "id": "fieldId",
-            "reasoning": "The user provided their email address."
+            "reasoning": "The user provided their email address"
           },
           "agreement": {
             "value": null,
             "confidence": 1.0,
             "id": "fieldId",
-            "reasoning": "User explicitly refused to provide this information."
+            "reasoning": "User explicitly refused to provide this information"
           }
         }`;
 
