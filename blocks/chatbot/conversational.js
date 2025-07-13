@@ -13,6 +13,7 @@ export default class Conversational extends EventTarget {
     this.form = null;
     this.form = new Form();
     this.model = new AIModel();
+    this.noOfFields = 3;
 
     // Field type classification for smart processing
     this.complexFieldTypes = new Set(['drop-down', 'radio-group', 'checkbox-group', 'checkbox', 'date-input', 'datetime-input', 'file-input', 'range', 'color']);
@@ -128,7 +129,7 @@ export default class Conversational extends EventTarget {
         return [field];
       }
       fields.push(field);
-      if (fields.length >= 4) {
+      if (fields.length >= this.noOfFields) {
         return fields;
       }
     }
@@ -228,7 +229,7 @@ export default class Conversational extends EventTarget {
 
       if (response) {
         Object.entries(response).forEach(([fieldName, fieldData]) => {
-          if (fieldData.value && fieldData.confidence > 0.5) {
+          if (fieldData.confidence > 0.5) {
             const currentField = this.form.getField(fieldData?.id);
             if (currentField?.qualifiedName) {
               const qualifiedPath = currentField.qualifiedName.replace('$form.', '');
