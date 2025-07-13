@@ -44,86 +44,15 @@
       ]
     },
     {
-      "title": "Blocks",
-      "id": "blocks",
+      "title": "Adaptive Forms",
+      "id": "form",
       "components": [
-        {
-          "title": "Accordion",
-          "id": "accordion",
-          "plugins": {
-            "da": {
-              "name": "accordion",
-              "rows": 1,
-              "columns": 2
-            }
-          }
-        },
-        {
-          "title": "Accordion Item",
-          "id": "accordion-item",
-          "plugins": {
-            "da": {
-              "name": "accordion-item",
-              "rows": 2,
-              "columns": 0
-            }
-          }
-        },
-        {
-          "title": "Cards",
-          "id": "cards",
-          "plugins": {
-            "da": {
-              "name": "cards",
-              "unsafeHTML": "<div><div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture></div><div></div></div></div>"
-            }
-          },
-          "model": "cards",
-          "filter": "cards"
-        },
-        {
-          "title": "Card",
-          "id": "card",
-          "plugins": {
-            "da": {
-              "name": "card",
-              "unsafeHTML": "<div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture></div><div></div></div>"
-            }
-          },
-          "model": "card"
-        },
-        {
-          "title": "Carousel",
-          "id": "carousel",
-          "plugins": {
-            "da": {
-              "name": "carousel",
-              "unsafeHTML": "<div><div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture></div><div></div></div>"
-            }
-          }
-        },
-        {
-          "title": "Carousel Slide",
-          "id": "carousel-item",
-          "plugins": {
-            "da": {
-              "name": "carousel-item",
-              "unsafeHTML": "<div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture></div><div></div></div>"
-            }
-          }
-        },
         {
           "title": "Adaptive Form",
           "id": "form",
           "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "fd/franklin/components/form/v1/form",
-                "template": {
-                  "fieldType": "form",
-                  "fd:version": "2.1"
-                }
-              }
+            "da": {
+              "unsafeHTML": "<div class=\"form\"><div><div><a href=\"\">Adaptive Form</a></div></div></div>"
             }
           }
         },
@@ -438,6 +367,77 @@
                   "value": "Adaptive Form Text Component"
                 }
               }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Blocks",
+      "id": "blocks",
+      "components": [
+        {
+          "title": "Accordion",
+          "id": "accordion",
+          "plugins": {
+            "da": {
+              "name": "accordion",
+              "rows": 1,
+              "columns": 2
+            }
+          }
+        },
+        {
+          "title": "Accordion Item",
+          "id": "accordion-item",
+          "plugins": {
+            "da": {
+              "name": "accordion-item",
+              "rows": 2,
+              "columns": 0
+            }
+          }
+        },
+        {
+          "title": "Cards",
+          "id": "cards",
+          "plugins": {
+            "da": {
+              "name": "cards",
+              "unsafeHTML": "<div><div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture></div><div></div></div></div>"
+            }
+          },
+          "model": "cards",
+          "filter": "cards"
+        },
+        {
+          "title": "Card",
+          "id": "card",
+          "plugins": {
+            "da": {
+              "name": "card",
+              "unsafeHTML": "<div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture></div><div></div></div>"
+            }
+          },
+          "model": "card"
+        },
+        {
+          "title": "Carousel",
+          "id": "carousel",
+          "plugins": {
+            "da": {
+              "name": "carousel",
+              "unsafeHTML": "<div><div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture></div><div></div></div>"
+            }
+          }
+        },
+        {
+          "title": "Carousel Slide",
+          "id": "carousel-item",
+          "plugins": {
+            "da": {
+              "name": "carousel-item",
+              "unsafeHTML": "<div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture></div><div></div></div>"
             }
           }
         },

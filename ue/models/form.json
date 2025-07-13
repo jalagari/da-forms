@@ -4,19 +4,13 @@
       "title": "Adaptive Form",
       "id": "form",
       "plugins": {
-        "xwalk": {
-          "page": {
-            "resourceType": "fd/franklin/components/form/v1/form",
-            "template": {
-              "fieldType": "form",
-              "fd:version": "2.1"
-            }
-          }
+        "da": {
+          "unsafeHTML": "<div class=\"form\"><div><div><a href=\"\">Adaptive Form</a></div></div></div>"
         }
       }
     },
     {
-      "...": "./models/form-components/_*.json#/definitions"
+      "...": "./form-components/_*.json#/definitions"
     },
     {
       "...": "./components/*/_*.json#/definitions"
@@ -165,7 +159,7 @@
       ]
     },
     {
-      "...": "./models/form-components/_*.json#/models"
+      "...": "./form-components/_*.json#/models"
     },
     {
       "...": "./components/*/_*.json#/models"

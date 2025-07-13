@@ -16,7 +16,7 @@
       }
     },
     {
-      "...": "./models/form-components/_*.json#/definitions"
+      "...": "./form-components/_*.json#/definitions"
     },
     {
       "...": "./components/*/_*.json#/definitions"
@@ -165,7 +165,7 @@
       ]
     },
     {
-      "...": "./models/form-components/_*.json#/models"
+      "...": "./form-components/_*.json#/models"
     },
     {
       "...": "./components/*/_*.json#/models"

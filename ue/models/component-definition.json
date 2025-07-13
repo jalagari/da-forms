@@ -22,6 +22,15 @@
       ]
     },
     {
+      "title": "Adaptive Forms",
+      "id": "form",
+      "components": [
+        {
+          "...": "./form.json#/definitions"
+        }
+      ]
+    },
+    {
       "title": "Blocks",
       "id": "blocks",
       "components": [
