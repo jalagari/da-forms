@@ -14,7 +14,6 @@
       "columns",
       "embed",
       "fragment",
-      "form",
       "hero",
       "image",
       "quote",
@@ -22,7 +21,9 @@
       "tabs",
       "table",
       "text",
-      "video"
+      "video",
+      "form",
+      "embed-adaptive-form"
     ]
   },
   {
@@ -41,6 +42,35 @@
     "id": "carousel",
     "components": [
       "carousel-item"
+    ]
+  },
+  {
+    "id": "form",
+    "components": [
+      "captcha",
+      "checkbox",
+      "checkbox-group",
+      "date-input",
+      "drop-down",
+      "email",
+      "file-input",
+      "form-accordion",
+      "form-button",
+      "form-fragment",
+      "form-image",
+      "form-modal",
+      "form-reset-button",
+      "form-submit-button",
+      "number-input",
+      "panel",
+      "password",
+      "plain-text",
+      "radio-group",
+      "rating",
+      "telephone-input",
+      "text-input",
+      "tnc",
+      "wizard"
     ]
   },
   {
