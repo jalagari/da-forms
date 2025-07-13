@@ -147,7 +147,7 @@ export default class Conversational extends EventTarget {
 
       // Get schema for the selected fields
       const schema = this.getSchema(this.currentRequestedFields);
-      const response = await this.model.getSmartQuestion(schema);
+      const response = await this.model.getSmartQuestion(schema, this.noOfFields);
 
       // Store which fields we're asking about
 

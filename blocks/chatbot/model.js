@@ -112,126 +112,49 @@ class AIModel {
     return 'Built-in conversational AI is unavailable';
   }
 
-  async getSmartQuestion(schema) {
-    const prompt = `You are a conversational assistant that creates natural questions to collect form data.
-        Your goal is to group related fields and ask for them in a friendly, conversational way.
+  async getSmartQuestion(schema, fieldCount = null) {
+    // Calculate field count if not provided
+    const actualFieldCount = fieldCount || Object.keys(schema.properties || {}).length;
 
-        CRITICAL: You must ONLY work with the CURRENT schema provided below. Do NOT reference any previous schemas, fields, or conversation history. Only use the fields that are explicitly present in this schema.
+    const prompt = `You are a conversational form assistant. Create a natural question to collect data for the fields in the provided schema.
 
-        WARNING: If you include ANY field IDs that are not in the schema below, your response will be incorrect. Only use the exact field IDs from the provided schema.
-        
-        CRITICAL WARNING: The AI has been observed to hallucinate fields like "firstName", "familyName", "givenNames", "uci" when they don't exist in the schema. This is WRONG. Only use fields that are actually present in the schema above.
-
-        JSON Schema of available fields:
+        JSON Schema (contains ${actualFieldCount} field${actualFieldCount !== 1 ? 's' : ''}):
         ${JSON.stringify(schema, null, 2)}
 
-        SCHEMA VALIDATION: 
-        - The schema above contains ONLY the fields that are currently available
-        - Any field not listed in this schema should NEVER be referenced
-        - Previous conversation fields are NOT available and should be ignored
-        - You must work ONLY with the fields explicitly shown in this schema
+        CRITICAL WARNINGS:
+        - Do NOT include any fields that are not explicitly listed in the schema above
+        - Use the exact "id" values from the schema, not the property names
+        - Only use fields that actually exist in the current schema
 
-        INSTRUCTIONS:
-        1. Examine ONLY the schema's "properties" to see the CURRENTLY available fields.
-        2. ALL fields provided in this schema should be included in your question.
-        3. Create a single, friendly, conversational message asking for ALL the provided fields.
-        4. Group the fields logically in your question (e.g., name+email+phone, address fields, preferences).
-        5. NEVER include field IDs, technical names, or enum values in the conversational question.
-        6. Use the field's description, placeholder, or label to create natural questions.
-        7. For enum fields, don't list the options in the question - let the UI handle that.
-        8. IGNORE any fields that are not in the current schema - do not reference previous fields.
-        9. DOUBLE-CHECK: Ensure every field in your requestedFields array exists in the current schema.
-        10. CRITICAL: If a field is not in the schema above, it does not exist and cannot be used.
-        11. FALLBACK: If you can't form a natural question, use the field's description directly.
-        12. NO HALLUCINATION: Never invent fields or questions that aren't based on the actual schema.
-        13. EXPLICIT VERIFICATION: Before responding, explicitly state what field IDs you found in the schema.
-        14. ZERO TOLERANCE: Any field ID not in the schema is completely forbidden.
+        RULES:
+        1. Use ONLY fields that exist in the schema above
+        2. Your requestedFields array must have exactly ${actualFieldCount} item${actualFieldCount !== 1 ? 's' : ''}
+        3. Extract field IDs from the "id" values in the schema
+        4. Group related fields into a single natural question (e.g., "What's your name and email?")
+        5. Use field descriptions and placeholders to create natural questions
+        6. Return valid JSON with double quotes only
+        7. IMPORTANT: Use the actual field count (${actualFieldCount}) from the schema, not the example below
 
-        FIELD TYPE GUIDELINES:
-        - Text fields: Ask naturally ("What's your name?", "What's your email?")
-        - Number fields: Be specific ("How old are you?", "What's your phone number?")
-        - Boolean fields: Ask yes/no questions ("Do you agree to the terms?")
-        - Choice fields: Ask for preference ("What's your preferred contact method?")
-        - Date fields: Be specific about the date needed ("When were you born?")
-        - File fields: Be clear about what to upload ("Please upload your resume")
-        
-        SPECIAL CASE HANDLING:
-        - If the field has a description, use it directly in your question
-        - If the field has a placeholder, incorporate it into your question
-        - If you can't form a natural question, use the description as-is
-        - NEVER hallucinate or make up fields that don't exist
+        MANDATORY VALIDATION:
+        Before creating your response, you MUST:
+        1. List each property name and its ID from the schema above
+        2. Verify you have exactly ${actualFieldCount} field${actualFieldCount !== 1 ? 's' : ''}
+        3. Use ONLY these exact field IDs in your requestedFields array
+        4. Do not add any fields that are not in the schema
 
-        GROUPING EXAMPLES (GOOD):
-        - "Let's start with your basic information. What's your full name, email address, and phone number?"
-        - "Now I need your contact details. What's your phone number, preferred contact method, and any additional notes?"
-        - "Tell me about your address - what's your street address, city, state, and zip code?"
-        - "Describe your specific needs so the right support can be provided." (using field description directly)
-        - "Please describe your accommodation needs." (using field placeholder)
-
-        EXAMPLES OF WHAT NOT TO DO (BAD):
-        - ❌ "Could you provide your first name (textinput-400472a990), last name (textinput-5dba1787fa)?"
-        - ❌ "Please enter your name (firstName) and email (emailAddress)."
-        - ❌ "I need your first_name, last_name, and email_address fields."
-        - ❌ "Choose from: email, phone, sms" (let the UI show options)
-        - ❌ "What's your name and the address from the previous form?" (never reference previous fields)
-        - ❌ "To get started, I need your family name and given name." (if these fields are not in the current schema)
-        - ❌ Including field IDs like "familyName", "givenNames" if they don't exist in the current schema
-        - ❌ Using ANY field IDs that are not explicitly listed in the schema properties above
-        - ❌ Referencing fields from memory or previous conversations
-
-        CRITICAL JSON FORMATTING REQUIREMENTS:
-        1. ALWAYS use double quotes for all strings (never single quotes)
-        2. NEVER use single quotes anywhere in the JSON response
-        3. ALWAYS close all quotes, brackets, and braces
-        4. NEVER include trailing commas
-        5. NEVER include unescaped quotes, apostrophes, or special characters that break JSON
-        6. ALWAYS ensure the JSON is valid by checking that all opening brackets/braces have matching closing ones
-        7. Test your JSON mentally before returning - ensure it can be parsed
-
-        CRITICAL: You MUST return ONLY a single, valid JSON object. No other text, explanations, or comments.
-
-        REQUIRED JSON FORMAT:
+        FORMAT:
         {
-        "message": "A conversational question asking for the selected fields naturally.",
-        "requestedFields": ["field_id_1", "field_id_2", "field_id_3"]
+          "message": "Your question here",
+          "requestedFields": ["field_id_1", "field_id_2", "field_id_3"]
         }
 
-        The "requestedFields" array must contain the actual field IDs from the CURRENT schema (the "id" values), not placeholder values.
+        EXAMPLE:
+        If schema has: accommodationOtherDetails (id: "r3DWcKYYrpe") and givenNames (id: "bfzaTklDFE0")
+        Then requestedFields should be: ["r3DWcKYYrpe", "bfzaTklDFE0"]
+        And message should be: "Please provide your given names and describe your accommodation needs."
+        (Use exact field IDs, not property names)
 
-        IMPORTANT: 
-        - Include ALL fields provided in the CURRENT schema in your question and requestedFields array. Do not skip any fields.
-        - Do NOT reference any fields that are not in the current schema.
-        - Do NOT use any previous conversation history or previous schemas.
-        - ONLY work with the fields provided in this specific schema.
-
-        MANDATORY FIELD EXTRACTION:
-        You MUST complete this step before creating your response:
-        
-        Step 1: List the exact fields available in the schema above:
-        - Look at the "properties" object
-        - For each property, write down: property name and its "id" value
-        - Example: "otherAccommodationDetails" -> "NYKPjkn5ZLZ"
-        
-        Step 2: Verify these are the ONLY fields available
-        - Do not add any fields that are not in the properties object
-        - Do not reference any fields from memory or previous conversations
-        
-        Step 3: Use ONLY these extracted field IDs in your requestedFields array
-        
-        SINGLE FIELD HANDLING:
-        - If there's only one field, use its description or placeholder directly
-        - Don't try to group it with non-existent fields
-        - Don't create complex questions for simple fields
-        - Use the field's description as the question if it's clear and complete
-
-        FINAL VALIDATION: Before returning your response, verify that:
-        1. Every field ID in your "requestedFields" array exists in the schema above
-        2. You are not referencing any fields from previous conversations
-        3. Your question only asks for fields that are actually in the current schema
-        4. The field IDs match exactly with the "id" values from the schema
-        5. You have extracted and verified each field ID from the schema properties
-
-        Now, create a question for ALL the provided fields and generate the JSON response.`;
+        Create your response now.`;
 
     try {
       const response = await this.session.prompt(prompt);
