@@ -7,63 +7,72 @@ class AIModel {
 
   convertToJson(message) {
     console.log('message', message);
+
+    // Helper function to clean whitespace
+    const cleanWhitespace = (text) => text
+      .replace(/\n/g, ' ')
+      .replace(/\r/g, ' ')
+      .replace(/\t/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    // Helper function to attempt JSON parsing
+    const tryParseJson = (text, attemptName) => {
+      try {
+        return JSON.parse(text);
+      } catch (error) {
+        console.log(`${attemptName} failed:`, error.message);
+        return null;
+      }
+    };
+
+    // Step 1: Initial cleanup
     let cleaned = message.trim();
 
-    // Remove markdown code blocks
+    // Step 2: Remove markdown code blocks
     if (cleaned.includes('```json')) {
       cleaned = cleaned.replace(/```json|```/g, '').trim();
     } else if (cleaned.includes('```')) {
       cleaned = cleaned.replace(/```/g, '').trim();
     }
 
-    // Try to extract JSON from text if LLM added extra text
+    // Step 3: Try to extract JSON from text if LLM added extra text
     const jsonMatch = cleaned.match(/\{.*\}/);
     if (jsonMatch) {
-      cleaned = jsonMatch[0];
+      [cleaned] = jsonMatch;
     }
 
-    try {
-      return JSON.parse(cleaned);
-    } catch (error) {
-      // Clean up formatting issues
-      cleaned = cleaned
-        .replace(/\n/g, ' ')
-        .replace(/\r/g, ' ')
-        .replace(/\t/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim();
+    // Step 4: First parsing attempt
+    let result = tryParseJson(cleaned, 'Initial parse');
+    if (result) return result;
 
-      try {
-        return JSON.parse(cleaned);
-      } catch (secondError) {
-        // Last attempt - try to extract JSON pattern more aggressively
-        const jsonPattern = /\{[\s\S]*\}/;
-        const lastMatch = message.match(jsonPattern);
-        if (lastMatch) {
-          try {
-            const finalClean = lastMatch[0]
-              .replace(/\n/g, ' ')
-              .replace(/\r/g, ' ')
-              .replace(/\t/g, ' ')
-              .replace(/\s+/g, ' ')
-              .trim();
-            return JSON.parse(finalClean);
-          } catch (thirdError) {
-            console.log('Original message:', message);
-            console.error('All JSON parse attempts failed:', thirdError);
-            throw new Error('Unable to parse LLM response');
-          }
-        }
+    // Step 5: Second attempt with whitespace cleaning
+    const cleanedText = cleanWhitespace(cleaned);
+    result = tryParseJson(cleanedText, 'Whitespace cleaned parse');
+    if (result) return result;
 
-        console.log('Original message:', message);
-        console.log('Cleaned:', cleaned);
-        console.error('JSON parse failed:', secondError);
-        throw new Error('Unable to parse LLM response');
-      }
+    // Step 6: Final attempt with aggressive JSON extraction
+    const jsonPattern = /\{[\s\S]*\}/;
+    const lastMatch = message.match(jsonPattern);
+    if (lastMatch) {
+      const finalClean = cleanWhitespace(lastMatch[0]);
+      result = tryParseJson(finalClean, 'Aggressive extraction parse');
+      if (result) return result;
     }
+
+    // All attempts failed
+    console.log('Original message:', message);
+    console.log('Final cleaned attempt:', cleaned);
+    throw new Error('Unable to parse LLM response - all JSON parsing attempts failed');
   }
 
   async setupModel() {
+    // Check if LanguageModel is available globally
+    if (typeof LanguageModel === 'undefined') {
+      console.warn('Build-in AI model is not available. Please ensure the AI model library is loaded.');
+      return 'Build-in AI model is not available';
+    }
+
     const availability = await LanguageModel.availability();
     if (availability !== 'unavailable') {
       this.params = await LanguageModel.params();
@@ -208,6 +217,16 @@ class AIModel {
         - **For enum fields:** Choose the closest matching option from the enum list
         - **For boolean fields:** Convert yes/no responses to true/false
         
+        CRITICAL JSON FORMATTING REQUIREMENTS:
+        1. ALWAYS use double quotes for all strings (never single quotes)
+        2. ALWAYS properly escape quotes within strings using backslash: \\"
+        3. ALWAYS close all quotes, brackets, and braces
+        4. NEVER include trailing commas
+        5. NEVER include unescaped quotes, apostrophes, or special characters that break JSON
+        6. ALWAYS ensure the JSON is valid by checking that all opening brackets/braces have matching closing ones
+        7. If reasoning text contains quotes or apostrophes, escape them properly: \\" or \\'
+        8. Test your JSON mentally before returning - ensure it can be parsed
+        
         CRITICAL: Your final output must be a single JSON object where each field name from the schema is a key, and the value is an object containing the extracted data. Do not include any other text or explanations.
         
         REQUIRED JSON FORMAT (EXAMPLE):
@@ -216,7 +235,7 @@ class AIModel {
             "value": "John",
             "confidence": 0.95,
             "id": "fieldId",
-            "reasoning": "The user said 'My name is John'."
+            "reasoning": "The user said \\"My name is John.\\""
           },
           "email": {
             "value": "john@example.com",

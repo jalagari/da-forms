@@ -93,6 +93,7 @@ export default class Conversational extends EventTarget {
 
     if (availableFields.length === 0) {
       await this.completeConversation();
+      return;
     }
 
     // Get next field or group of fields
@@ -100,6 +101,7 @@ export default class Conversational extends EventTarget {
 
     if (this.currentRequestedFields.length === 0) {
       await this.completeConversation();
+      return;
     }
 
     // Process the fields
@@ -239,22 +241,21 @@ export default class Conversational extends EventTarget {
         });
 
         await this.updateFormData(this.collectedData);
+      } else {
+        this.updateConversationHistory('I didn\'t quite understand that. Could you please try again?', 'assistant');
       }
-      this.updateConversationHistory("I didn't quite understand that. Could you please try again?", 'assistant');
     } catch (error) {
       console.error('Error processing response:', error);
-      this.updateConversationHistory("I didn't quite understand that. Could you please try again?", 'assistant');
+      this.updateConversationHistory('I didn\'t quite understand that. Could you please try again?', 'assistant');
     }
   }
 
   async completeConversation() {
     const summary = Object.keys(this.collectedData).length > 0
-      ? `I've collected: ${Object.entries(this.collectedData)
-        .map(([field, value]) => `${field}: ${value}`)
-        .join(', ')}`
+      ? `I've collected: ${JSON.stringify(this.collectedData, null, 2)}`
       : 'All done!';
 
-    const message = `Perfect! ${summary} Your form is now complete and ready to submit.`;
+    const message = `Perfect! ${summary} \n\n Your form is now complete and ready to submit.`;
 
     this.updateConversationHistory(message, 'assistant');
 

@@ -40,7 +40,7 @@ class ChatBot extends EventTarget {
       </div>
       <div class="chatbot-header">
         <div class="chatbot-status"></div>
-        <h3>AI Assistant</h3>
+        <h3>AEM Forms Assistant</h3>
         <button id="toggle-system-btn" class="toggle-system-messages-button" title="Toggle System Messages">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
